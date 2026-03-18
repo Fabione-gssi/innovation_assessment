@@ -1,0 +1,77 @@
+{
+  "section": {
+    "id": "M1",
+    "name": "Modulo · Processi operativi",
+    "type": "module",
+    "order": 101,
+    "description": "Approfondimento processi, colli di bottiglia e standardizzazione",
+    "enabled": false,
+    "is_required": false,
+    "notes_enabled": true
+  },
+  "question_bank": [
+    {
+      "id": "M1_Q01",
+      "section_id": "M1",
+      "module_id": "M1",
+      "text": "I lead time dei processi principali sono misurati e controllati?",
+      "type": "likert_1_5",
+      "question_purpose": "scoring",
+      "scorable": true,
+      "required": false,
+      "default_weight": 1.1,
+      "options": [],
+      "help_text": "Valuta misurazione e controllo dei tempi di processo.",
+      "allows_comment": true,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "high",
+      "tags": [
+        "lead_time"
+      ]
+    },
+    {
+      "id": "M1_Q02",
+      "section_id": "M1",
+      "module_id": "M1",
+      "text": "Il rework o gli errori ricorrenti sono monitorati?",
+      "type": "likert_1_5",
+      "question_purpose": "scoring",
+      "scorable": true,
+      "required": false,
+      "default_weight": 1.0,
+      "options": [],
+      "help_text": "Valuta presenza di controllo su errori e rilavorazioni.",
+      "allows_comment": true,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "medium",
+      "tags": [
+        "rework"
+      ]
+    },
+    {
+      "id": "M1_O01",
+      "section_id": "M1",
+      "module_id": "M1",
+      "text": "Quali processi dovrebbero essere ridisegnati per primi?",
+      "type": "text_long",
+      "question_purpose": "qualitative",
+      "scorable": false,
+      "required": false,
+      "default_weight": 0,
+      "options": [],
+      "help_text": "Raccogli processi prioritari e motivazioni.",
+      "allows_comment": false,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "high",
+      "tags": [
+        "process_redesign"
+      ]
+    }
+  ]
+}

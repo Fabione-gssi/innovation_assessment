@@ -1,0 +1,191 @@
+{
+  "section": {
+    "id": "M2",
+    "name": "Modulo · Governance e organizzazione",
+    "type": "module",
+    "order": 102,
+    "description": "Approfondimento su ruoli, decision rights, forum decisionali e coordinamento organizzativo",
+    "enabled": false,
+    "is_required": false,
+    "notes_enabled": true
+  },
+  "question_bank": [
+    {
+      "id": "M2_Q01",
+      "section_id": "M2",
+      "module_id": "M2",
+      "text": "Ruoli e responsabilità sulle iniziative chiave sono formalizzati e compresi?",
+      "type": "likert_1_5",
+      "question_purpose": "scoring",
+      "scorable": true,
+      "required": false,
+      "default_weight": 1.2,
+      "options": [],
+      "help_text": "Valuta chiarezza effettiva di ruoli, responsabilità e accountability.",
+      "allows_comment": true,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "high",
+      "tags": [
+        "roles",
+        "responsibility",
+        "accountability"
+      ]
+    },
+    {
+      "id": "M2_Q02",
+      "section_id": "M2",
+      "module_id": "M2",
+      "text": "Esistono forum o momenti strutturati per decisioni trasversali e riesame delle iniziative?",
+      "type": "likert_1_5",
+      "question_purpose": "scoring",
+      "scorable": true,
+      "required": false,
+      "default_weight": 1.1,
+      "options": [],
+      "help_text": "Valuta governance interfunzionale e cadence decisionale.",
+      "allows_comment": true,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "high",
+      "tags": [
+        "decision_forum",
+        "cadence"
+      ]
+    },
+    {
+      "id": "M2_Q03",
+      "section_id": "M2",
+      "module_id": "M2",
+      "text": "Le decisioni vengono prese al livello organizzativo corretto, senza escalation o colli di bottiglia eccessivi?",
+      "type": "likert_1_5",
+      "question_purpose": "scoring",
+      "scorable": true,
+      "required": false,
+      "default_weight": 1.0,
+      "options": [],
+      "help_text": "Valuta distribuzione dei decision rights e qualità delle escalation.",
+      "allows_comment": true,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "medium",
+      "tags": [
+        "decision_rights",
+        "escalation"
+      ]
+    },
+    {
+      "id": "M2_Q04",
+      "section_id": "M2",
+      "module_id": "M2",
+      "text": "Le responsabilità sui processi cross-funzionali sono presidiate, anche quando coinvolgono più funzioni?",
+      "type": "likert_1_5",
+      "question_purpose": "scoring",
+      "scorable": true,
+      "required": false,
+      "default_weight": 1.1,
+      "options": [],
+      "help_text": "Valuta ownership end-to-end e coordinamento tra funzioni.",
+      "allows_comment": true,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "high",
+      "tags": [
+        "process_ownership",
+        "cross_functional"
+      ]
+    },
+    {
+      "id": "M2_Q05",
+      "section_id": "M2",
+      "module_id": "M2",
+      "text": "La struttura organizzativa facilita il coordinamento e l'esecuzione oppure genera sovrapposizioni e zone grigie?",
+      "type": "likert_1_5",
+      "question_purpose": "hybrid",
+      "scorable": true,
+      "required": false,
+      "default_weight": 0.9,
+      "options": [],
+      "help_text": "Valuta se la struttura supporta o ostacola esecuzione e collaborazione.",
+      "allows_comment": true,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "medium",
+      "tags": [
+        "org_design",
+        "coordination"
+      ]
+    },
+    {
+      "id": "M2_Q06",
+      "section_id": "M2",
+      "module_id": "M2",
+      "text": "Esistono meccanismi chiari per gestire conflitti di priorità tra funzioni o business unit?",
+      "type": "likert_1_5",
+      "question_purpose": "scoring",
+      "scorable": true,
+      "required": false,
+      "default_weight": 1.0,
+      "options": [],
+      "help_text": "Valuta capacità di allineamento e arbitraggio organizzativo.",
+      "allows_comment": true,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "medium",
+      "tags": [
+        "conflict_management",
+        "priorities"
+      ]
+    },
+    {
+      "id": "M2_O01",
+      "section_id": "M2",
+      "module_id": "M2",
+      "text": "Dove si manifestano oggi le principali ambiguità di ownership o accountability?",
+      "type": "text_long",
+      "question_purpose": "qualitative",
+      "scorable": false,
+      "required": false,
+      "default_weight": 0,
+      "options": [],
+      "help_text": "Raccogli casi concreti, aree grigie e impatti operativi.",
+      "allows_comment": false,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "high",
+      "tags": [
+        "ownership_gaps",
+        "accountability"
+      ]
+    },
+    {
+      "id": "M2_O02",
+      "section_id": "M2",
+      "module_id": "M2",
+      "text": "Quali decisioni organizzative vengono rallentate più spesso e da cosa dipende il ritardo?",
+      "type": "text_long",
+      "question_purpose": "qualitative",
+      "scorable": false,
+      "required": false,
+      "default_weight": 0,
+      "options": [],
+      "help_text": "Raccogli esempi di colli di bottiglia decisionali o escalation improprie.",
+      "allows_comment": false,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "high",
+      "tags": [
+        "decision_delay",
+        "bottlenecks"
+      ]
+    }
+  ]
+}

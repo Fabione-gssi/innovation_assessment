@@ -1,0 +1,191 @@
+{
+  "section": {
+    "id": "M7",
+    "name": "Modulo · Innovation system alignment",
+    "type": "module",
+    "order": 107,
+    "description": "Approfondimento su intento di innovazione, cultura, risorse, processi e miglioramento continuo",
+    "enabled": false,
+    "is_required": false,
+    "notes_enabled": true
+  },
+  "question_bank": [
+    {
+      "id": "M7_Q01",
+      "section_id": "M7",
+      "module_id": "M7",
+      "text": "L'azienda ha definito in modo esplicito un intento di innovazione coerente con strategia e contesto?",
+      "type": "likert_1_5",
+      "question_purpose": "scoring",
+      "scorable": true,
+      "required": false,
+      "default_weight": 1.2,
+      "options": [],
+      "help_text": "Valuta chiarezza dell'intento di innovazione e suo collegamento alla strategia.",
+      "allows_comment": true,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "high",
+      "tags": [
+        "innovation_intent",
+        "strategy"
+      ]
+    },
+    {
+      "id": "M7_Q02",
+      "section_id": "M7",
+      "module_id": "M7",
+      "text": "Esistono ruoli, responsabilità e sponsorship chiari per il sistema di innovazione?",
+      "type": "likert_1_5",
+      "question_purpose": "scoring",
+      "scorable": true,
+      "required": false,
+      "default_weight": 1.1,
+      "options": [],
+      "help_text": "Valuta governance e sponsorship del sistema di innovazione.",
+      "allows_comment": true,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "high",
+      "tags": [
+        "innovation_governance",
+        "sponsorship"
+      ]
+    },
+    {
+      "id": "M7_Q03",
+      "section_id": "M7",
+      "module_id": "M7",
+      "text": "Le opportunità di innovazione vengono raccolte, valutate e riesaminate con un processo definito?",
+      "type": "likert_1_5",
+      "question_purpose": "scoring",
+      "scorable": true,
+      "required": false,
+      "default_weight": 1.1,
+      "options": [],
+      "help_text": "Valuta pipeline e processo decisionale sulle opportunità.",
+      "allows_comment": true,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "high",
+      "tags": [
+        "opportunity_management",
+        "pipeline"
+      ]
+    },
+    {
+      "id": "M7_Q04",
+      "section_id": "M7",
+      "module_id": "M7",
+      "text": "Sono allocate risorse, competenze e tempo adeguati per sostenere le iniziative di innovazione?",
+      "type": "likert_1_5",
+      "question_purpose": "scoring",
+      "scorable": true,
+      "required": false,
+      "default_weight": 1.0,
+      "options": [],
+      "help_text": "Valuta sostenibilità operativa dell'innovazione.",
+      "allows_comment": true,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "medium",
+      "tags": [
+        "resources",
+        "capabilities"
+      ]
+    },
+    {
+      "id": "M7_Q05",
+      "section_id": "M7",
+      "module_id": "M7",
+      "text": "Esistono metriche o criteri per valutare l'efficacia del sistema di innovazione e delle iniziative?",
+      "type": "likert_1_5",
+      "question_purpose": "scoring",
+      "scorable": true,
+      "required": false,
+      "default_weight": 1.0,
+      "options": [],
+      "help_text": "Valuta misurazione e learning loop.",
+      "allows_comment": true,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "medium",
+      "tags": [
+        "innovation_metrics",
+        "learning"
+      ]
+    },
+    {
+      "id": "M7_Q06",
+      "section_id": "M7",
+      "module_id": "M7",
+      "text": "La cultura organizzativa sostiene sperimentazione, apprendimento e collaborazione esterna quando utile?",
+      "type": "likert_1_5",
+      "question_purpose": "hybrid",
+      "scorable": true,
+      "required": false,
+      "default_weight": 0.9,
+      "options": [],
+      "help_text": "Valuta cultura, apertura e tolleranza al learning.",
+      "allows_comment": true,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "medium",
+      "tags": [
+        "culture",
+        "experimentation",
+        "open_innovation"
+      ]
+    },
+    {
+      "id": "M7_O01",
+      "section_id": "M7",
+      "module_id": "M7",
+      "text": "Quali elementi del sistema di innovazione sono oggi più deboli o assenti?",
+      "type": "text_long",
+      "question_purpose": "qualitative",
+      "scorable": false,
+      "required": false,
+      "default_weight": 0,
+      "options": [],
+      "help_text": "Raccogli gap su leadership, processi, risorse, cultura e misurazione.",
+      "allows_comment": false,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "high",
+      "tags": [
+        "ims_gaps",
+        "innovation_system"
+      ]
+    },
+    {
+      "id": "M7_O02",
+      "section_id": "M7",
+      "module_id": "M7",
+      "text": "Quali pratiche di innovazione funzionano già bene e andrebbero rafforzate o scalate?",
+      "type": "text_long",
+      "question_purpose": "qualitative",
+      "scorable": false,
+      "required": false,
+      "default_weight": 0,
+      "options": [],
+      "help_text": "Raccogli asset culturali, processuali o organizzativi già presenti.",
+      "allows_comment": false,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "medium",
+      "tags": [
+        "strengths",
+        "scaling"
+      ]
+    }
+  ]
+}

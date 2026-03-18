@@ -1,0 +1,190 @@
+{
+  "section": {
+    "id": "M9",
+    "name": "Modulo · Customer, value proposition e market intelligence",
+    "type": "module",
+    "order": 109,
+    "description": "Approfondimento su bisogni cliente, proposta di valore, segnali di mercato e apprendimento commerciale",
+    "enabled": false,
+    "is_required": false,
+    "notes_enabled": true
+  },
+  "question_bank": [
+    {
+      "id": "M9_Q01",
+      "section_id": "M9",
+      "module_id": "M9",
+      "text": "L'azienda raccoglie in modo sistematico insight su clienti, utenti o stakeholder di mercato?",
+      "type": "likert_1_5",
+      "question_purpose": "scoring",
+      "scorable": true,
+      "required": false,
+      "default_weight": 1.1,
+      "options": [],
+      "help_text": "Valuta continuità e qualità della raccolta insight.",
+      "allows_comment": true,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "high",
+      "tags": [
+        "customer_insights",
+        "market_intelligence"
+      ]
+    },
+    {
+      "id": "M9_Q02",
+      "section_id": "M9",
+      "module_id": "M9",
+      "text": "La proposta di valore è chiaramente differenziata rispetto ai concorrenti principali?",
+      "type": "likert_1_5",
+      "question_purpose": "scoring",
+      "scorable": true,
+      "required": false,
+      "default_weight": 1.1,
+      "options": [],
+      "help_text": "Valuta chiarezza e distintività della value proposition.",
+      "allows_comment": true,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "high",
+      "tags": [
+        "value_proposition",
+        "differentiation"
+      ]
+    },
+    {
+      "id": "M9_Q03",
+      "section_id": "M9",
+      "module_id": "M9",
+      "text": "Esistono meccanismi rapidi per riportare feedback dal mercato in decisioni di prodotto, servizio o processo?",
+      "type": "likert_1_5",
+      "question_purpose": "scoring",
+      "scorable": true,
+      "required": false,
+      "default_weight": 1.0,
+      "options": [],
+      "help_text": "Valuta chiusura del loop cliente-azione.",
+      "allows_comment": true,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "medium",
+      "tags": [
+        "feedback_loop",
+        "customer_voice"
+      ]
+    },
+    {
+      "id": "M9_Q04",
+      "section_id": "M9",
+      "module_id": "M9",
+      "text": "I segnali competitivi e i cambiamenti nel mercato sono monitorati in modo strutturato?",
+      "type": "likert_1_5",
+      "question_purpose": "scoring",
+      "scorable": true,
+      "required": false,
+      "default_weight": 1.0,
+      "options": [],
+      "help_text": "Valuta monitoraggio sistematico di trend, competitor e segnali deboli.",
+      "allows_comment": true,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "medium",
+      "tags": [
+        "competitor_monitoring",
+        "trends"
+      ]
+    },
+    {
+      "id": "M9_Q05",
+      "section_id": "M9",
+      "module_id": "M9",
+      "text": "Sono chiaramente identificate le opportunità di crescita, up-selling o servizi adiacenti?",
+      "type": "likert_1_5",
+      "question_purpose": "scoring",
+      "scorable": true,
+      "required": false,
+      "default_weight": 1.0,
+      "options": [],
+      "help_text": "Valuta capacità di lettura e sviluppo di opportunità di mercato.",
+      "allows_comment": true,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "medium",
+      "tags": [
+        "growth",
+        "adjacent_opportunities"
+      ]
+    },
+    {
+      "id": "M9_Q06",
+      "section_id": "M9",
+      "module_id": "M9",
+      "text": "Le ipotesi su bisogni del cliente vengono validate con dati, evidenze o sperimentazioni?",
+      "type": "likert_1_5",
+      "question_purpose": "scoring",
+      "scorable": true,
+      "required": false,
+      "default_weight": 1.0,
+      "options": [],
+      "help_text": "Valuta disciplina di validazione e apprendimento di mercato.",
+      "allows_comment": true,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "high",
+      "tags": [
+        "validation",
+        "experimentation"
+      ]
+    },
+    {
+      "id": "M9_O01",
+      "section_id": "M9",
+      "module_id": "M9",
+      "text": "Quali segmenti, bisogni o frizioni cliente meritano oggi maggiore attenzione?",
+      "type": "text_long",
+      "question_purpose": "qualitative",
+      "scorable": false,
+      "required": false,
+      "default_weight": 0,
+      "options": [],
+      "help_text": "Raccogli bisogni non soddisfatti, segmenti prioritari e frizioni rilevanti.",
+      "allows_comment": false,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "high",
+      "tags": [
+        "segments",
+        "customer_pain_points"
+      ]
+    },
+    {
+      "id": "M9_O02",
+      "section_id": "M9",
+      "module_id": "M9",
+      "text": "Quali segnali di mercato o mosse dei concorrenti stanno cambiando le priorità dell'azienda?",
+      "type": "text_long",
+      "question_purpose": "qualitative",
+      "scorable": false,
+      "required": false,
+      "default_weight": 0,
+      "options": [],
+      "help_text": "Raccogli trend, pressioni competitive e opportunità percepite.",
+      "allows_comment": false,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "high",
+      "tags": [
+        "market_signals",
+        "competitive_pressure"
+      ]
+    }
+  ]
+}

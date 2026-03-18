@@ -1,0 +1,192 @@
+{
+  "section": {
+    "id": "M8",
+    "name": "Modulo · Portfolio e project governance",
+    "type": "module",
+    "order": 108,
+    "description": "Approfondimento su selezione, bilanciamento, riesame e controllo delle iniziative",
+    "enabled": false,
+    "is_required": false,
+    "notes_enabled": true
+  },
+  "question_bank": [
+    {
+      "id": "M8_Q01",
+      "section_id": "M8",
+      "module_id": "M8",
+      "text": "Esistono criteri condivisi per selezionare e confrontare iniziative o progetti?",
+      "type": "likert_1_5",
+      "question_purpose": "scoring",
+      "scorable": true,
+      "required": false,
+      "default_weight": 1.2,
+      "options": [],
+      "help_text": "Valuta formalizzazione dei criteri di selezione.",
+      "allows_comment": true,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "high",
+      "tags": [
+        "selection_criteria",
+        "portfolio"
+      ]
+    },
+    {
+      "id": "M8_Q02",
+      "section_id": "M8",
+      "module_id": "M8",
+      "text": "Il portafoglio delle iniziative è riesaminato periodicamente con decisioni di continuazione, modifica o stop?",
+      "type": "likert_1_5",
+      "question_purpose": "scoring",
+      "scorable": true,
+      "required": false,
+      "default_weight": 1.1,
+      "options": [],
+      "help_text": "Valuta disciplina di riesame del portafoglio.",
+      "allows_comment": true,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "high",
+      "tags": [
+        "portfolio_review",
+        "stop_go"
+      ]
+    },
+    {
+      "id": "M8_Q03",
+      "section_id": "M8",
+      "module_id": "M8",
+      "text": "Le iniziative sono bilanciate tra quick wins, abilitatori e scommesse strategiche?",
+      "type": "likert_1_5",
+      "question_purpose": "scoring",
+      "scorable": true,
+      "required": false,
+      "default_weight": 1.0,
+      "options": [],
+      "help_text": "Valuta equilibrio del portafoglio e orizzonti temporali.",
+      "allows_comment": true,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "medium",
+      "tags": [
+        "portfolio_balance",
+        "time_horizon"
+      ]
+    },
+    {
+      "id": "M8_Q04",
+      "section_id": "M8",
+      "module_id": "M8",
+      "text": "Le dipendenze tra iniziative e la capacità reale delle risorse sono considerate nelle priorità?",
+      "type": "likert_1_5",
+      "question_purpose": "scoring",
+      "scorable": true,
+      "required": false,
+      "default_weight": 1.0,
+      "options": [],
+      "help_text": "Valuta realismo pianificatorio e gestione dipendenze.",
+      "allows_comment": true,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "high",
+      "tags": [
+        "dependencies",
+        "capacity"
+      ]
+    },
+    {
+      "id": "M8_Q05",
+      "section_id": "M8",
+      "module_id": "M8",
+      "text": "Ogni iniziativa rilevante ha sponsor, owner e KPI di successo definiti?",
+      "type": "likert_1_5",
+      "question_purpose": "scoring",
+      "scorable": true,
+      "required": false,
+      "default_weight": 1.1,
+      "options": [],
+      "help_text": "Valuta accountability e controllo del portafoglio.",
+      "allows_comment": true,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "high",
+      "tags": [
+        "owner",
+        "kpi",
+        "accountability"
+      ]
+    },
+    {
+      "id": "M8_Q06",
+      "section_id": "M8",
+      "module_id": "M8",
+      "text": "Le decisioni di priorità tengono conto in modo esplicito di impatto, fattibilità e rischio?",
+      "type": "likert_1_5",
+      "question_purpose": "scoring",
+      "scorable": true,
+      "required": false,
+      "default_weight": 1.1,
+      "options": [],
+      "help_text": "Valuta qualità del modello decisionale del portafoglio.",
+      "allows_comment": true,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "high",
+      "tags": [
+        "impact",
+        "feasibility",
+        "risk"
+      ]
+    },
+    {
+      "id": "M8_O01",
+      "section_id": "M8",
+      "module_id": "M8",
+      "text": "Quali iniziative assorbono oggi risorse senza produrre abbastanza valore o apprendimento?",
+      "type": "text_long",
+      "question_purpose": "qualitative",
+      "scorable": false,
+      "required": false,
+      "default_weight": 0,
+      "options": [],
+      "help_text": "Raccogli casi di saturazione o priorità discutibili.",
+      "allows_comment": false,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "high",
+      "tags": [
+        "low_value_initiatives",
+        "resource_drain"
+      ]
+    },
+    {
+      "id": "M8_O02",
+      "section_id": "M8",
+      "module_id": "M8",
+      "text": "Quali criteri aggiuntivi sarebbero utili per decidere meglio le priorità?",
+      "type": "text_long",
+      "question_purpose": "qualitative",
+      "scorable": false,
+      "required": false,
+      "default_weight": 0,
+      "options": [],
+      "help_text": "Raccogli proposte di miglioramento del framework di portfolio governance.",
+      "allows_comment": false,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "medium",
+      "tags": [
+        "portfolio_framework",
+        "decision_criteria"
+      ]
+    }
+  ]
+}

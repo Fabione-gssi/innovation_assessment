@@ -1,0 +1,77 @@
+{
+  "section": {
+    "id": "M6",
+    "name": "Modulo · Risk, compliance e change readiness",
+    "type": "module",
+    "order": 106,
+    "description": "Approfondimento rischi, vincoli e adozione del cambiamento",
+    "enabled": false,
+    "is_required": false,
+    "notes_enabled": true
+  },
+  "question_bank": [
+    {
+      "id": "M6_Q01",
+      "section_id": "M6",
+      "module_id": "M6",
+      "text": "I rischi di adozione e resistenza al cambiamento sono presidiati?",
+      "type": "likert_1_5",
+      "question_purpose": "scoring",
+      "scorable": true,
+      "required": false,
+      "default_weight": 1.1,
+      "options": [],
+      "help_text": "Valuta change governance.",
+      "allows_comment": true,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "high",
+      "tags": [
+        "change_risk"
+      ]
+    },
+    {
+      "id": "M6_Q02",
+      "section_id": "M6",
+      "module_id": "M6",
+      "text": "Esiste un piano di comunicazione/formazione per le iniziative rilevanti?",
+      "type": "likert_1_5",
+      "question_purpose": "scoring",
+      "scorable": true,
+      "required": false,
+      "default_weight": 1.0,
+      "options": [],
+      "help_text": "Valuta abilitatori di adozione.",
+      "allows_comment": true,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "medium",
+      "tags": [
+        "enablement"
+      ]
+    },
+    {
+      "id": "M6_O01",
+      "section_id": "M6",
+      "module_id": "M6",
+      "text": "Quali sono i principali ostacoli culturali o politici al cambiamento?",
+      "type": "text_long",
+      "question_purpose": "qualitative",
+      "scorable": false,
+      "required": false,
+      "default_weight": 0,
+      "options": [],
+      "help_text": "Raccogli ostacoli interni e dinamiche rilevanti.",
+      "allows_comment": false,
+      "allows_na": true,
+      "custom_origin": "module",
+      "reportable": true,
+      "finding_relevance": "high",
+      "tags": [
+        "cultural_barriers"
+      ]
+    }
+  ]
+}
