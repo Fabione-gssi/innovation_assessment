@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Any, List, Optional
+from typing import Any, Optional
 
 import streamlit as st
 
@@ -11,9 +11,25 @@ CONFIDENCE_OPTIONS = ["low", "medium", "high"]
 EVIDENCE_OPTIONS = ["percezione", "intervista", "documento", "dato"]
 
 
-def render_question(question: Question, existing: Optional[Response] = None) -> Response:
+LIKERT_LABELS = {
+    1: "1 - Molto basso / assente",
+    2: "2 - Basso",
+    3: "3 - Medio",
+    4: "4 - Buono",
+    5: "5 - Molto buono",
+}
+
+
+def render_question(question: Question, existing: Optional[Response] = None, *, compact: bool = True) -> Response:
     existing = existing or Response(question_id=question.id)
-    st.markdown(f"**{question.text}**")
+    badge = {
+        "scoring": "Scoring",
+        "qualitative": "Qualitativa",
+        "hybrid": "Ibrida",
+    }.get(question.question_purpose, question.question_purpose)
+
+    st.markdown(f"**{question.text}**  ")
+    st.caption(f"{badge} · ID {question.id}{' · obbligatoria' if question.required else ''}")
     if question.help_text:
         st.caption(question.help_text)
 
@@ -39,24 +55,17 @@ def render_question(question: Question, existing: Optional[Response] = None) -> 
             value = None
             value_label = ""
     elif question.type == "likert_1_5":
-        labels = {
-            1: "1 - Molto basso / assente",
-            2: "2 - Basso",
-            3: "3 - Medio",
-            4: "4 - Buono",
-            5: "5 - Molto buono",
-        }
         current = int(existing.value) if str(existing.value).isdigit() else 3
         value = st.radio(
             f"Risposta {question.id}",
-            options=list(labels.keys()),
-            index=list(labels.keys()).index(current),
+            options=list(LIKERT_LABELS.keys()),
+            index=list(LIKERT_LABELS.keys()).index(current),
             horizontal=True,
-            format_func=lambda x: labels[x],
+            format_func=lambda x: LIKERT_LABELS[x],
             key=f"{question.id}_value",
             label_visibility="collapsed",
         )
-        value_label = labels.get(int(value), "")
+        value_label = LIKERT_LABELS.get(int(value), "")
     elif question.type == "yes_no_comment":
         selected = st.radio(
             f"Risposta {question.id}", ["yes", "no"],
@@ -81,51 +90,51 @@ def render_question(question: Question, existing: Optional[Response] = None) -> 
             value=str(existing.value or ""),
             placeholder=question.placeholder,
             key=f"{question.id}_value",
-            height=100 if question.type == "text_long" else 70,
+            height=110 if question.type == "text_long" else 80,
             label_visibility="collapsed",
         )
+
+    not_applicable = existing.not_applicable
+    if question.allows_na:
+        not_applicable = st.checkbox("Non applicabile", value=existing.not_applicable, key=f"{question.id}_na")
+        if not_applicable:
+            value = None
+            value_label = ""
 
     comment = existing.comment
     if question.allows_comment:
-        comment = st.text_area(
-            f"Commento {question.id}",
-            value=existing.comment,
-            height=70,
-            key=f"{question.id}_comment",
-            placeholder="Commento, evidenze o precisazioni",
-            label_visibility="collapsed",
-        )
-
-    col1, col2 = st.columns(2)
-    with col1:
-        confidence = st.selectbox(
-            "Confidence",
-            CONFIDENCE_OPTIONS,
-            index=CONFIDENCE_OPTIONS.index(existing.confidence),
-            key=f"{question.id}_confidence",
-        )
-    with col2:
-        evidence_type = st.selectbox(
-            "Fonte",
-            EVIDENCE_OPTIONS,
-            index=EVIDENCE_OPTIONS.index(existing.evidence_type),
-            key=f"{question.id}_evidence_type",
-        )
-
-    evidence_note = st.text_input(
-        f"Nota evidenza {question.id}",
-        value=existing.evidence_note,
-        key=f"{question.id}_evidence_note",
-        label_visibility="collapsed",
-        placeholder="Fonte, documento o nota di supporto",
-    )
+        comment_label = "Commento / evidenze"
+        if compact:
+            with st.expander(comment_label, expanded=bool(existing.comment or existing.evidence_note)):
+                comment = st.text_area(
+                    f"Commento {question.id}",
+                    value=existing.comment,
+                    height=70,
+                    key=f"{question.id}_comment",
+                    placeholder="Commento, eccezioni, esempi o note utili",
+                    label_visibility="collapsed",
+                )
+                confidence, evidence_type, evidence_note = _render_evidence_fields(question.id, existing)
+        else:
+            comment = st.text_area(
+                f"Commento {question.id}",
+                value=existing.comment,
+                height=70,
+                key=f"{question.id}_comment",
+                placeholder="Commento, eccezioni, esempi o note utili",
+                label_visibility="collapsed",
+            )
+            confidence, evidence_type, evidence_note = _render_evidence_fields(question.id, existing)
+    else:
+        with st.expander("Evidenze e affidabilità", expanded=bool(existing.evidence_note)):
+            confidence, evidence_type, evidence_note = _render_evidence_fields(question.id, existing)
 
     return Response(
         question_id=question.id,
         value=value,
         value_label=value_label,
         comment=comment,
-        not_applicable=False,
+        not_applicable=not_applicable,
         confidence=confidence,
         evidence_type=evidence_type,
         evidence_note=evidence_note,
@@ -133,3 +142,30 @@ def render_question(question: Question, existing: Optional[Response] = None) -> 
         insight_tags=existing.insight_tags,
         issue_flags=existing.issue_flags,
     )
+
+
+def _render_evidence_fields(question_id: str, existing: Response):
+    col1, col2 = st.columns(2)
+    with col1:
+        confidence = st.selectbox(
+            "Affidabilità della risposta",
+            CONFIDENCE_OPTIONS,
+            index=CONFIDENCE_OPTIONS.index(existing.confidence),
+            key=f"{question_id}_confidence",
+        )
+    with col2:
+        evidence_type = st.selectbox(
+            "Fonte principale",
+            EVIDENCE_OPTIONS,
+            index=EVIDENCE_OPTIONS.index(existing.evidence_type),
+            key=f"{question_id}_evidence_type",
+        )
+
+    evidence_note = st.text_input(
+        f"Nota evidenza {question_id}",
+        value=existing.evidence_note,
+        key=f"{question_id}_evidence_note",
+        label_visibility="collapsed",
+        placeholder="Fonte, documento o nota di supporto",
+    )
+    return confidence, evidence_type, evidence_note

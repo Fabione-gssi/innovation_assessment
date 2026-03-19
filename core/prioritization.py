@@ -30,12 +30,16 @@ class PrioritizationService:
 
     def findings_to_initiatives(self, findings: List[Finding]) -> List[Initiative]:
         initiatives: List[Initiative] = []
-        for idx, finding in enumerate(findings, start=1):
+        ranked = []
+        for finding in findings:
             p_index = self.priority_index(finding)
-            p_class = self.priority_class(p_index, finding)
+            ranked.append((finding, p_index, self.priority_class(p_index, finding)))
+        ranked.sort(key=lambda x: x[1], reverse=True)
+
+        for rank, (finding, p_index, p_class) in enumerate(ranked, start=1):
             initiatives.append(
                 Initiative(
-                    id=f"I-{idx:03d}",
+                    id=f"I-{rank:03d}",
                     title=finding.title,
                     description=finding.recommendation_hint or finding.description,
                     linked_findings=[finding.id],
@@ -43,6 +47,8 @@ class PrioritizationService:
                     expected_outcome=self._infer_outcome(finding),
                     effort=self._infer_effort(finding),
                     priority_class=p_class,
+                    priority_index=p_index,
+                    priority_rank=rank,
                     time_horizon=self._infer_horizon(p_class),
                     success_kpis=self._infer_kpis(finding),
                     notes=f"Priority index: {p_index}",

@@ -5,7 +5,17 @@ from pathlib import Path
 
 import pandas as pd
 
-from core.models import AssessmentDocument, Question, Response, Section, SectionSummary, Module, AssessmentMeta
+from core.models import (
+    AssessmentDocument,
+    AssessmentMeta,
+    Initiative,
+    Module,
+    Question,
+    Response,
+    RoadmapItem,
+    Section,
+    SectionSummary,
+)
 
 
 class ExcelRepository:
@@ -55,6 +65,8 @@ class ExcelRepository:
         questions_df = pd.read_excel(xls, "Question_Bank").fillna("")
         responses_df = pd.read_excel(xls, "Responses").fillna("") if "Responses" in xls.sheet_names else pd.DataFrame()
         summaries_df = pd.read_excel(xls, "Section_Summaries").fillna("") if "Section_Summaries" in xls.sheet_names else pd.DataFrame()
+        priorities_df = pd.read_excel(xls, "Priorities").fillna("") if "Priorities" in xls.sheet_names else pd.DataFrame()
+        roadmap_df = pd.read_excel(xls, "Roadmap").fillna("") if "Roadmap" in xls.sheet_names else pd.DataFrame()
 
         sections = [Section(**row) for row in sections_df.to_dict(orient="records")]
         modules = [Module(**row) for row in modules_df.to_dict(orient="records")]
@@ -74,6 +86,27 @@ class ExcelRepository:
             row["key_issues"] = json.loads(row.get("key_issues", "[]") or "[]") if isinstance(row.get("key_issues", ""), str) else row.get("key_issues", [])
             row["recommended_followups"] = json.loads(row.get("recommended_followups", "[]") or "[]") if isinstance(row.get("recommended_followups", ""), str) else row.get("recommended_followups", [])
             summaries.append(SectionSummary(**row))
+
+        initiatives = []
+        for row in priorities_df.to_dict(orient="records"):
+            for key in ["linked_findings", "dependencies", "success_kpis"]:
+                if key in row and isinstance(row.get(key, ""), str):
+                    try:
+                        row[key] = json.loads(row[key])
+                    except Exception:
+                        row[key] = [item.strip() for item in str(row.get(key, "")).split(",") if item.strip()]
+            initiatives.append(Initiative(**row))
+
+        roadmap = []
+        for row in roadmap_df.to_dict(orient="records"):
+            for key in ["dependencies", "success_kpis"]:
+                if key in row and isinstance(row.get(key, ""), str):
+                    try:
+                        row[key] = json.loads(row[key])
+                    except Exception:
+                        row[key] = [item.strip() for item in str(row.get(key, "")).split(",") if item.strip()]
+            roadmap.append(RoadmapItem(**row))
+
         meta_row = metadata.to_dict(orient="records")[0] if not metadata.empty else {}
         assessment = AssessmentMeta(**meta_row)
 
@@ -84,4 +117,6 @@ class ExcelRepository:
             question_bank=questions,
             responses=responses,
             section_summaries=summaries,
+            initiatives=initiatives,
+            roadmap=roadmap,
         )

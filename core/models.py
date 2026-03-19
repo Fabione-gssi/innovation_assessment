@@ -59,7 +59,6 @@ class Question(BaseModel):
         if self.scorable and self.type in {"text_short", "text_long"}:
             raise ValueError("Text questions cannot be directly scorable in v1.")
         if self.scorable and self.type in {"single_choice", "likert_1_5", "yes_no_comment"} and not self.options:
-            # likert and yes/no can be synthesized automatically; single choice should define options
             if self.type == "single_choice":
                 raise ValueError("Scorable single_choice questions require options with score mapping.")
         return self
@@ -144,6 +143,9 @@ class Initiative(BaseModel):
     effort: str = ""
     dependencies: List[str] = Field(default_factory=list)
     priority_class: str = ""
+    priority_index: float = 0.0
+    priority_rank: int = 0
+    manual_override: bool = False
     success_kpis: List[str] = Field(default_factory=list)
     notes: str = ""
 
@@ -157,6 +159,7 @@ class RoadmapItem(BaseModel):
     owner: str = ""
     dependencies: List[str] = Field(default_factory=list)
     success_kpis: List[str] = Field(default_factory=list)
+    sequence: int = 0
     status: str = "proposed"
     notes: str = ""
 

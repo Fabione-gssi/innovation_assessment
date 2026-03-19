@@ -67,9 +67,9 @@ class AssessmentService:
 
     def apply_active_modules(self, document: AssessmentDocument) -> AssessmentDocument:
         base_sections = [s for s in document.sections if s.type == "core"]
-        base_questions = [q for q in document.question_bank if q.module_id is None]
         extra_sections: List[Section] = []
         extra_questions: List[Question] = []
+
         for module in document.modules:
             if not module.enabled:
                 continue
@@ -79,8 +79,21 @@ class AssessmentService:
             section.enabled = True
             extra_sections.append(section)
             extra_questions.extend(questions)
-        document.sections = sorted(base_sections + extra_sections, key=lambda s: s.order)
-        document.question_bank = base_questions + extra_questions
+
+        final_sections = sorted(base_sections + extra_sections, key=lambda s: s.order)
+        final_section_ids = {s.id for s in final_sections}
+
+        preserved_questions = [
+            q for q in document.question_bank
+            if q.custom_origin in {"core", "local_custom", "library_custom"} and q.section_id in final_section_ids
+        ]
+
+        deduped_questions = {}
+        for question in preserved_questions + extra_questions:
+            deduped_questions[question.id] = question
+
+        document.sections = final_sections
+        document.question_bank = list(deduped_questions.values())
         document.assessment.active_modules = [m.id for m in document.modules if m.enabled]
         return document
 

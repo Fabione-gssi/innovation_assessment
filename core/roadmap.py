@@ -7,12 +7,14 @@ from core.models import Initiative, RoadmapItem
 
 class RoadmapService:
     def initiatives_to_roadmap(self, initiatives: List[Initiative]) -> List[RoadmapItem]:
+        sorted_initiatives = sorted(initiatives, key=lambda i: (i.priority_rank or 9999, -(i.priority_index or 0)))
         items: List[RoadmapItem] = []
-        for idx, initiative in enumerate(initiatives, start=1):
+        for idx, initiative in enumerate(sorted_initiatives, start=1):
             items.append(
                 RoadmapItem(
                     id=f"R-{idx:03d}",
                     initiative_id=initiative.id,
+                    sequence=idx,
                     time_horizon=initiative.time_horizon or "6_12_months",
                     stream=initiative.stream or "trasversale",
                     priority_class=initiative.priority_class or "Foundational",
