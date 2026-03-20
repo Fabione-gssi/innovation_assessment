@@ -30,6 +30,9 @@ def inject_custom_css():
 
     section[data-testid="stSidebar"] .stMarkdown p,
     section[data-testid="stSidebar"] .stMarkdown li,
+    section[data-testid="stSidebar"] label {
+        color: #D5D3EC !important;
+    }
     section[data-testid="stSidebar"] h1,
     section[data-testid="stSidebar"] h2,
     section[data-testid="stSidebar"] h3 {
