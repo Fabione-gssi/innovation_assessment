@@ -13,7 +13,6 @@ def inject_custom_css():
     <style>
     /* ── Palette e variabili ──────────────────────────────────────── */
     :root {
-        --primary: #EEEDFE;
         --primary-light: #EEEDFE;
         --accent: #1D9E75;
         --accent-light: #E1F5EE;
