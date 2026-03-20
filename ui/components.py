@@ -28,7 +28,7 @@ def inject_custom_css():
 
     /* ── Sidebar ─────────────────────────────────────────────────── */
     section[data-testid="stSidebar"] {
-        background: linear-gradient(180deg, #FF6276 0%, #FF6276 100%);
+        background: linear-gradient(180deg, #FF9296 0%, #FF9296 100%);
     }
     section[data-testid="stSidebar"] .stMarkdown p,
     section[data-testid="stSidebar"] .stMarkdown li,
