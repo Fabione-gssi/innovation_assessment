@@ -28,17 +28,17 @@ def inject_custom_css():
 
     /* ── Sidebar ─────────────────────────────────────────────────── */
     section[data-testid="stSidebar"] {
-        background: linear-gradient(180deg, #FF0000 0%, #FF0000 100%);
+        background: linear-gradient(180deg, #FF00FF 0%, #FF00FF 100%);
     }
     section[data-testid="stSidebar"] .stMarkdown p,
     section[data-testid="stSidebar"] .stMarkdown li,
     section[data-testid="stSidebar"] label {
-        color: #D5D3EC !important;
+        color: #FFFFFF !important;
     }
     section[data-testid="stSidebar"] h1,
     section[data-testid="stSidebar"] h2,
     section[data-testid="stSidebar"] h3 {
-        color: #D5D3EC !important;
+        color: #FFFFFF !important;
     }
 
     /* ── Cards ───────────────────────────────────────────────────── */
