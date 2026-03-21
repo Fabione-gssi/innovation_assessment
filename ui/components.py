@@ -49,7 +49,7 @@ def inject_custom_css():
     /* Expander dentro la sidebar */
     section[data-testid="stSidebar"] details summary p,
     section[data-testid="stSidebar"] details summary span {
-        color: #EAE8FB !important;
+        color: #FFFFFF !important;
     }
     section[data-testid="stSidebar"] details summary svg {
         fill: #EAE8FB !important;
