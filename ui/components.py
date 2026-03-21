@@ -28,7 +28,7 @@ def inject_custom_css():
 
     /* ── Sidebar ─────────────────────────────────────────────────── */
     section[data-testid="stSidebar"] {
-        background: #ffe2e2; 
+        background: #ffa2a2; 
     }
     /* Testo generico nella sidebar */
     section[data-testid="stSidebar"] p,
