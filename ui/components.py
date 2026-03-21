@@ -22,13 +22,13 @@ def inject_custom_css():
         --text: #2C2C2A;
         --text-muted: #5F5E5A;
         --bg: #FAFAF8;
-        --card-bg: #FFFFFF;
+        --card-bg: #EAE8FB;
         --border: #E8E6DF;
     }
 
     /* ── Sidebar ─────────────────────────────────────────────────── */
     section[data-testid="stSidebar"] {
-        background: linear-gradient(180deg, #ffc496 0%, #ffc496 100%);
+        background: #ff2b2b; 
     }
     /* Testo generico nella sidebar — sfondo chiaro → testo scuro */
     section[data-testid="stSidebar"] p,
