@@ -30,15 +30,42 @@ def inject_custom_css():
     section[data-testid="stSidebar"] {
         background: linear-gradient(180deg, #ffc496 0%, #ffc496 100%);
     }
+    /* Testo generico nella sidebar */
+    section[data-testid="stSidebar"] p,
+    section[data-testid="stSidebar"] span,
+    section[data-testid="stSidebar"] small,
+    section[data-testid="stSidebar"] label,
     section[data-testid="stSidebar"] .stMarkdown p,
     section[data-testid="stSidebar"] .stMarkdown li,
     section[data-testid="stSidebar"] label {
         color: #000000 !important;
     }
+    /* Intestazioni sidebar */
     section[data-testid="stSidebar"] h1,
     section[data-testid="stSidebar"] h2,
     section[data-testid="stSidebar"] h3 {
         color: #000000 !important;
+    }
+    /* Expander dentro la sidebar */
+    section[data-testid="stSidebar"] details summary p,
+    section[data-testid="stSidebar"] details summary span {
+        color: #EAE8FB !important;
+    }
+    section[data-testid="stSidebar"] details summary svg {
+        fill: #EAE8FB !important;
+    }
+    /* Pulsanti dentro la sidebar */
+    section[data-testid="stSidebar"] .stButton button {
+        background: rgba(255,255,255,0.12);
+        color: #FFFFFF !important;
+        border: 1px solid rgba(255,255,255,0.25);
+    }
+    section[data-testid="stSidebar"] .stButton button:hover {
+        background: rgba(255,255,255,0.22);
+    }
+    /* Divider */
+    section[data-testid="stSidebar"] hr {
+        border-color: rgba(255,255,255,0.2) !important;
     }
 
     /* ── Cards ───────────────────────────────────────────────────── */
