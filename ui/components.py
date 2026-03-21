@@ -71,7 +71,7 @@ def inject_custom_css():
     
     /* ── Sidebar: testo button nero ─────────────────────────────── */
     section[data-testid="stMarkdownContainer"] {
-        color: #000000 !important;
+        color: #FF00FF !important;
     }
 
     /* ── Cards ───────────────────────────────────────────────────── */
