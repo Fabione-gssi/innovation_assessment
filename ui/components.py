@@ -21,7 +21,7 @@ def inject_custom_css():
         --danger: #E24B4A;
         --text: #2C2C2A;
         --text-muted: #5F5E5A;
-        --bg: #FAFAF8;
+        --bg: #FA0000;
         --card-bg: #EAE8FB;
         --border: #E8E6DF;
     }
