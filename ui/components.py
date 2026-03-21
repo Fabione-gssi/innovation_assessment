@@ -47,33 +47,6 @@ def inject_custom_css():
         color: #FFFFFF !important;
     }
     
-    /* ── Sidebar: radio button selezionato ──────────────────────── */
-    section[data-testid="stSidebar"] [role="radio"][aria-checked="true"] > div:first-child {
-        background-color: #2563EB !important;
-        border-color: #2563EB !important;
-    }
-    /* label del radio selezionato */
-    section[data-testid="stSidebar"] [data-testid="stRadio"] label:has(input:checked) > div > p,
-    section[data-testid="stSidebar"] [data-testid="stRadio"] label:has(input:checked) > p {
-        color: #2563EB !important;
-    }
-    
-    /* ── Sidebar: checkbox selezionata ──────────────────────────── */
-    section[data-testid="stSidebar"] [role="checkbox"][aria-checked="true"] > div:first-child {
-        background-color: #2563EB !important;
-        border-color: #2563EB !important;
-    }
-    /* label della checkbox selezionata */
-    section[data-testid="stSidebar"] [data-testid="stCheckbox"] label:has(input:checked) > div > p,
-    section[data-testid="stSidebar"] [data-testid="stCheckbox"] label:has(input:checked) > p {
-        color: #2563EB !important;
-    }
-    
-    /* ── Sidebar: testo button nero ─────────────────────────────── */
-    section[data-testid="stButton"] {
-        background: #2563EB !important;
-    }
-
     /* ── Cards ───────────────────────────────────────────────────── */
     .assessment-card {
         background: var(--card-bg);
