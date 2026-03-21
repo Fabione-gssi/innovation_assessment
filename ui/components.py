@@ -22,7 +22,7 @@ def inject_custom_css():
         --text: #2C2C2A;
         --text-muted: #5F5E5A;
         --bg: #FAFAF8;
-        --card-bg: #FFFFFF;
+        --card-bg: #EAE8FB;
         --border: #E8E6DF;
     }
 
@@ -52,7 +52,7 @@ def inject_custom_css():
         color: #EAE8FB !important;
     }
     section[data-testid="stSidebar"] details summary svg {
-        fill: #FFFFFF !important;
+        fill: #EAE8FB !important;
     }
     /* Pulsanti dentro la sidebar */
     section[data-testid="stSidebar"] .stButton button {
