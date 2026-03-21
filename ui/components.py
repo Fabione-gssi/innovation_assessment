@@ -46,28 +46,22 @@ def inject_custom_css():
     section[data-testid="stSidebar"] h3 {
         color: #FFFFFF !important;
     }
-    /* Expander dentro la sidebar */
-    section[data-testid="stSidebar"] details summary p,
-    section[data-testid="stSidebar"] details summary span {
-        color: #EAE8FB !important;
+
+    /* ── Sidebar radio & checkbox: stato selezionato in blu ──────── */
+    section[data-testid="stSidebar"] [data-baseweb="radio"] [data-checked="true"] > div:first-child,
+    section[data-testid="stSidebar"] [data-baseweb="checkbox"] [data-checked="true"] > div:first-child {
+        background-color: #5B9BF0 !important;
+        border-color: #5B9BF0 !important;
     }
-    section[data-testid="stSidebar"] details summary svg {
-        fill: #EAE8FB !important;
+    section[data-testid="stSidebar"] [data-baseweb="radio"] [data-checked="true"],
+    section[data-testid="stSidebar"] [data-baseweb="checkbox"] [data-checked="true"] {
+        color: #7BB8F5 !important;
     }
-    /* Pulsanti dentro la sidebar */
-    section[data-testid="stSidebar"] .stButton button {
-        background: rgba(255,255,255,0.12);
-        color: #FFFFFF !important;
-        border: 1px solid rgba(255,255,255,0.25);
+    section[data-testid="stSidebar"] [data-baseweb="radio"] [data-checked="true"] span,
+    section[data-testid="stSidebar"] [data-baseweb="checkbox"] [data-checked="true"] span {
+        color: #7BB8F5 !important;
     }
-    section[data-testid="stSidebar"] .stButton button:hover {
-        background: rgba(255,255,255,0.22);
-    }
-    /* Divider */
-    section[data-testid="stSidebar"] hr {
-        border-color: rgba(255,255,255,0.2) !important;
-    }
-    
+
     /* ── Cards ───────────────────────────────────────────────────── */
     .assessment-card {
         background: var(--card-bg);
