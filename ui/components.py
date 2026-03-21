@@ -67,32 +67,7 @@ def inject_custom_css():
     section[data-testid="stSidebar"] hr {
         border-color: rgba(255,255,255,0.2) !important;
     }
-    /* ── Radio button nella sidebar ──────────────────────────────── */
-    /* Cerchio non selezionato */
-    section[data-testid="stSidebar"] [data-baseweb="radio"] [role="radio"] {
-        border-color: rgba(255,255,255,0.5) !important;
-        background-color: transparent !important;
-    }
-    /* Cerchio selezionato (bordo) */
-    section[data-testid="stSidebar"] [data-baseweb="radio"] [role="radio"][aria-checked="true"] {
-        border-color: #FFFFFF !important;
-        background-color: #FFFFFF !important;
-    }
-    /* Pallino interno selezionato */
-    section[data-testid="stSidebar"] [data-baseweb="radio"] [role="radio"][aria-checked="true"]::before {
-        background-color: #0000FF !important;
-    }
-    /* Hover sul cerchio */
-    section[data-testid="stSidebar"] [data-baseweb="radio"] [role="radio"]:hover {
-        border-color: #FFFFFF !important;
-        background-color: rgba(255,255,255,0.15) !important;
-    }
-    /* Label voce selezionata più luminosa */
-    section[data-testid="stSidebar"] [data-baseweb="radio"] [aria-checked="true"] ~ div p {
-        color: #0000FF !important;
-        font-weight: 600;
-    }
-
+    
     /* ── Cards ───────────────────────────────────────────────────── */
     .assessment-card {
         background: var(--card-bg);
