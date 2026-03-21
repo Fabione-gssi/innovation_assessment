@@ -71,7 +71,7 @@ def inject_custom_css():
     
     /* ── Sidebar: testo button nero ─────────────────────────────── */
     section[data-testid="stButton"] {
-        background-color: #EAE8FB !important;
+        background-color: #2563EB !important;
     }
 
     /* ── Cards ───────────────────────────────────────────────────── */
