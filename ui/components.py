@@ -41,6 +41,21 @@ def inject_custom_css():
         color: #FFFFFF !important;
     }
 
+    /* ── Sidebar radio & checkbox: stato selezionato in blu ──────── */
+    section[data-testid="stSidebar"] [data-baseweb="radio"] [data-checked="true"] > div:first-child,
+    section[data-testid="stSidebar"] [data-baseweb="checkbox"] [data-checked="true"] > div:first-child {
+        background-color: #5B9BF0 !important;
+        border-color: #5B9BF0 !important;
+    }
+    section[data-testid="stSidebar"] [data-baseweb="radio"] [data-checked="true"],
+    section[data-testid="stSidebar"] [data-baseweb="checkbox"] [data-checked="true"] {
+        color: #7BB8F5 !important;
+    }
+    section[data-testid="stSidebar"] [data-baseweb="radio"] [data-checked="true"] span,
+    section[data-testid="stSidebar"] [data-baseweb="checkbox"] [data-checked="true"] span {
+        color: #7BB8F5 !important;
+    }
+
     /* ── Cards ───────────────────────────────────────────────────── */
     .assessment-card {
         background: var(--card-bg);
