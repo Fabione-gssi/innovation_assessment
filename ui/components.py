@@ -57,7 +57,7 @@ def inject_custom_css():
     /* Pulsanti dentro la sidebar */
     section[data-testid="stSidebar"] .stButton button {
         background: rgba(255,255,255,0.12);
-        color: #FFFFFF !important;
+        color: #000000 !important;
         border: 1px solid rgba(255,255,255,0.25);
     }
     section[data-testid="stSidebar"] .stButton button:hover {
