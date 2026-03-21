@@ -13,7 +13,7 @@ def inject_custom_css():
     <style>
     /* ── Palette e variabili ──────────────────────────────────────── */
     :root {
-        --primary: #EEEDFE;
+        --primary: #3B3689;
         --primary-light: #EEEDFE;
         --accent: #1D9E75;
         --accent-light: #E1F5EE;
@@ -28,7 +28,7 @@ def inject_custom_css():
 
     /* ── Sidebar ─────────────────────────────────────────────────── */
     section[data-testid="stSidebar"] {
-        background: linear-gradient(180deg, #4540A0 0%, #534AB7 100%);
+        background: linear-gradient(180deg, #ffc496 0%, #ffc496 100%);
     }
     /* Testo generico nella sidebar */
     section[data-testid="stSidebar"] p,
@@ -37,20 +37,14 @@ def inject_custom_css():
     section[data-testid="stSidebar"] label,
     section[data-testid="stSidebar"] .stMarkdown p,
     section[data-testid="stSidebar"] .stMarkdown li,
-    section[data-testid="stSidebar"] .stMarkdown span,
-    section[data-testid="stSidebar"] .stCaption p,
-    section[data-testid="stSidebar"] [data-testid="stCaptionContainer"] p,
-    section[data-testid="stSidebar"] .stRadio p,
-    section[data-testid="stSidebar"] .stCheckbox p,
-    section[data-testid="stSidebar"] .stCheckbox span {
-        color: #EAE8FB !important;
+    section[data-testid="stSidebar"] label {
+        color: #000000 !important;
     }
     /* Intestazioni sidebar */
     section[data-testid="stSidebar"] h1,
     section[data-testid="stSidebar"] h2,
-    section[data-testid="stSidebar"] h3,
-    section[data-testid="stSidebar"] h4 {
-        color: #FFFFFF !important;
+    section[data-testid="stSidebar"] h3 {
+        color: #000000 !important;
     }
     /* Expander dentro la sidebar */
     section[data-testid="stSidebar"] details summary p,
