@@ -13,7 +13,7 @@ def inject_custom_css():
     <style>
     /* ── Palette e variabili ──────────────────────────────────────── */
     :root {
-        --primary: #EEEDFE;
+        --primary: #3B3689;
         --primary-light: #EEEDFE;
         --accent: #1D9E75;
         --accent-light: #E1F5EE;
@@ -22,19 +22,25 @@ def inject_custom_css():
         --text: #2C2C2A;
         --text-muted: #5F5E5A;
         --bg: #FAFAF8;
-        --card-bg: #FFFFFF;
+        --card-bg: #EAE8FB;
         --border: #E8E6DF;
     }
 
     /* ── Sidebar ─────────────────────────────────────────────────── */
     section[data-testid="stSidebar"] {
-        background: linear-gradient(180deg, #2D2878 0%, #3B3689 100%);
+        background: #ff2b2b; 
     }
+    /* Testo generico nella sidebar */
+    section[data-testid="stSidebar"] p,
+    section[data-testid="stSidebar"] span,
+    section[data-testid="stSidebar"] small,
+    section[data-testid="stSidebar"] label,
     section[data-testid="stSidebar"] .stMarkdown p,
     section[data-testid="stSidebar"] .stMarkdown li,
     section[data-testid="stSidebar"] label {
-        color: #D5D3EC !important;
+        color: #FFFFFF !important;
     }
+    /* Intestazioni sidebar */
     section[data-testid="stSidebar"] h1,
     section[data-testid="stSidebar"] h2,
     section[data-testid="stSidebar"] h3 {
