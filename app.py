@@ -48,6 +48,12 @@ def _set_data(data: AssessmentData):
 inject_custom_css()
 data = _get_data()
 
+# Inizializza stato checkbox moduli (una volta sola per sessione)
+for _mod in MODULES:
+    _key = f"mod_en_{_mod['id']}"
+    if _key not in st.session_state:
+        st.session_state[_key] = True
+
 
 # ═══════════════════════════════════════════════════════════════════════════
 # SIDEBAR — NAVIGAZIONE
@@ -57,19 +63,35 @@ with st.sidebar:
     st.caption(APP_SUBTITLE)
     st.markdown("---")
 
-    # ── Navigazione principale ─────────────────────────────────────────
+    # ── Configuratore moduli ───────────────────────────────────────────
+    with st.expander("⚙️ Moduli attivi", expanded=False):
+        c1, c2 = st.columns(2)
+        with c1:
+            if st.button("✅ Tutti", use_container_width=True, key="btn_en_all"):
+                for _m in MODULES:
+                    st.session_state[f"mod_en_{_m['id']}"] = True
+                st.rerun()
+        with c2:
+            if st.button("⬜ Nessuno", use_container_width=True, key="btn_dis_all"):
+                for _m in MODULES:
+                    st.session_state[f"mod_en_{_m['id']}"] = False
+                st.rerun()
+        st.markdown("")
+        for _mod in MODULES:
+            st.checkbox(f"{_mod['icon']} {_mod['name'][:28]}", key=f"mod_en_{_mod['id']}")
+
+    # Moduli attivi in base alle checkbox
+    active_modules = [m for m in MODULES if st.session_state.get(f"mod_en_{m['id']}", True)]
+
+    st.markdown("---")
+
+    # ── Navigazione principale — label STABILI (nessun badge dinamico) ─
     pages = [
         "🏠 Home",
         "🏢 Dati azienda",
     ]
-    # Moduli di assessment
-    for mod in MODULES:
-        completion = compute_completion_rate(data)
-        mod_comp = completion["modules"].get(mod["id"], {})
-        rate = mod_comp.get("rate", 0)
-        badge = f" ({rate:.0f}%)" if rate > 0 else ""
-        pages.append(f"{mod['icon']} {mod['name'][:22]}{badge}")
-
+    for mod in active_modules:
+        pages.append(f"{mod['icon']} {mod['name'][:22]}")
     pages += [
         "➕ Domande custom",
         "📊 Dashboard",
@@ -81,8 +103,15 @@ with st.sidebar:
 
     st.markdown("---")
 
-    # ── Mini progress ──────────────────────────────────────────────────
+    # ── Progresso moduli attivi ────────────────────────────────────────
     completion = compute_completion_rate(data)
+    for mod in active_modules:
+        mod_comp = completion["modules"].get(mod["id"], {})
+        rate = mod_comp.get("rate", 0)
+        if rate > 0:
+            st.caption(f"{mod['icon']} {mod['name'][:20]}: {rate:.0f}%")
+
+    # ── Mini progress globale ──────────────────────────────────────────
     gl = completion["global"]
     st.markdown(f"**Progresso globale: {gl['rate']:.0f}%**")
     render_progress_bar(gl["rate"], 100, "#1D9E75")
@@ -123,8 +152,10 @@ if selected == "🏠 Home":
     # Mappa moduli
     st.markdown("### Moduli di assessment")
     for cat_id, cat_info in CATEGORIES.items():
+        cat_modules = [m for m in active_modules if m["category"] == cat_id]
+        if not cat_modules:
+            continue
         st.markdown(f"**{cat_info['label']}**")
-        cat_modules = [m for m in MODULES if m["category"] == cat_id]
         cols = st.columns(min(len(cat_modules), 3))
         for i, mod in enumerate(cat_modules):
             with cols[i % len(cols)]:
