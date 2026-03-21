@@ -38,7 +38,7 @@ def inject_custom_css():
     section[data-testid="stSidebar"] .stMarkdown p,
     section[data-testid="stSidebar"] .stMarkdown li,
     section[data-testid="stSidebar"] label {
-        color: #FFFFFF !important;
+        color: #000000 !important;
     }
     /* Intestazioni sidebar */
     section[data-testid="stSidebar"] h1,
