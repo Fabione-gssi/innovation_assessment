@@ -89,7 +89,7 @@ def inject_custom_css():
     }
     /* Label voce selezionata più luminosa */
     section[data-testid="stSidebar"] [data-baseweb="radio"] [aria-checked="true"] ~ div p {
-        color: #FFFFFF !important;
+        color: #008CFF !important;
         font-weight: 600;
     }
 
