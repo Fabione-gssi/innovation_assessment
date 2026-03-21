@@ -49,15 +49,15 @@ def inject_custom_css():
     /* Expander dentro la sidebar */
     section[data-testid="stSidebar"] details summary p,
     section[data-testid="stSidebar"] details summary span {
-        color: #FFFFFF !important;
+        color: #EAE8FB !important;
     }
     section[data-testid="stSidebar"] details summary svg {
-        fill: #EAE8FB !important;
+        fill: #FFFFFF !important;
     }
     /* Pulsanti dentro la sidebar */
     section[data-testid="stSidebar"] .stButton button {
         background: rgba(255,255,255,0.12);
-        color: #000000 !important;
+        color: #FFFFFF !important;
         border: 1px solid rgba(255,255,255,0.25);
     }
     section[data-testid="stSidebar"] .stButton button:hover {
