@@ -28,7 +28,7 @@ def inject_custom_css():
 
     /* ── Sidebar ─────────────────────────────────────────────────── */
     section[data-testid="stSidebar"] {
-        background: #ff2b2b; 
+        background: #ffb2b2; 
     }
     /* Testo generico nella sidebar */
     section[data-testid="stSidebar"] p,
@@ -38,13 +38,13 @@ def inject_custom_css():
     section[data-testid="stSidebar"] .stMarkdown p,
     section[data-testid="stSidebar"] .stMarkdown li,
     section[data-testid="stSidebar"] label {
-        color: #FFFFFF !important;
+        color: #000000 !important;
     }
     /* Intestazioni sidebar */
     section[data-testid="stSidebar"] h1,
     section[data-testid="stSidebar"] h2,
     section[data-testid="stSidebar"] h3 {
-        color: #FFFFFF !important;
+        color: #000000 !important;
     }
     
     /* ── Cards ───────────────────────────────────────────────────── */
