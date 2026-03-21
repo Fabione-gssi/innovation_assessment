@@ -47,6 +47,18 @@ def inject_custom_css():
         color: #FFFFFF !important;
     }
 
+    /* ── Sidebar radio: indicatore e label selezionati in blu ────── */
+    /* Indicatore visivo (cerchio): background e bordo blu */
+    section[data-testid="stSidebar"] [data-baseweb="radio"][data-checked="true"] > div:first-child,
+    section[data-testid="stSidebar"] [data-baseweb="radio"][data-checked="true"] > div:first-child > div {
+        background-color: #5B9BF0 !important;
+        border-color: #5B9BF0 !important;
+    }
+    /* Solo il div del testo (secondo figlio diretto): colore blu */
+    section[data-testid="stSidebar"] [data-baseweb="radio"][data-checked="true"] > div:last-child {
+        color: #7BB8F5 !important;
+    }
+
     /* ── Cards ───────────────────────────────────────────────────── */
     .assessment-card {
         background: var(--card-bg);
