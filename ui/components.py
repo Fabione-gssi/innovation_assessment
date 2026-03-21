@@ -38,7 +38,7 @@ def inject_custom_css():
     section[data-testid="stSidebar"] .stMarkdown p,
     section[data-testid="stSidebar"] .stMarkdown li,
     section[data-testid="stSidebar"] label {
-        color: #000000 !important;
+        color: #FFFFFF !important;
     }
     /* Intestazioni sidebar */
     section[data-testid="stSidebar"] h1,
@@ -70,8 +70,8 @@ def inject_custom_css():
     }
     
     /* ── Sidebar: testo button nero ─────────────────────────────── */
-    section[data-testid="stMarkdownContainer"] label {
-        color: #FF00FF !important;
+    section[data-testid="stButton"] {
+        bg: #EAE8FB !important;
     }
 
     /* ── Cards ───────────────────────────────────────────────────── */
