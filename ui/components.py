@@ -80,7 +80,7 @@ def inject_custom_css():
     }
     /* Pallino interno selezionato */
     section[data-testid="stSidebar"] [data-baseweb="radio"] [role="radio"][aria-checked="true"]::before {
-        background-color: #534AB7 !important;
+        background-color: #008CFF !important;
     }
     /* Hover sul cerchio */
     section[data-testid="stSidebar"] [data-baseweb="radio"] [role="radio"]:hover {
