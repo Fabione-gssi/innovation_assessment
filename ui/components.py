@@ -80,7 +80,7 @@ def inject_custom_css():
     }
     /* Pallino interno selezionato */
     section[data-testid="stSidebar"] [data-baseweb="radio"] [role="radio"][aria-checked="true"]::before {
-        background-color: #008CFF !important;
+        background-color: #0000FF !important;
     }
     /* Hover sul cerchio */
     section[data-testid="stSidebar"] [data-baseweb="radio"] [role="radio"]:hover {
@@ -89,7 +89,7 @@ def inject_custom_css():
     }
     /* Label voce selezionata più luminosa */
     section[data-testid="stSidebar"] [data-baseweb="radio"] [aria-checked="true"] ~ div p {
-        color: #008CFF !important;
+        color: #0000FF !important;
         font-weight: 600;
     }
 
