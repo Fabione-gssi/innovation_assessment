@@ -70,7 +70,7 @@ def inject_custom_css():
     }
     
     /* ── Sidebar: testo button nero ─────────────────────────────── */
-    section[data-testid="stBaseButton-secondary"] label {
+    section[data-testid="stMarkdownContainer"] label {
         color: #FF00FF !important;
     }
 
