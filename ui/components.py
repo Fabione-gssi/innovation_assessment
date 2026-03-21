@@ -30,67 +30,70 @@ def inject_custom_css():
     section[data-testid="stSidebar"] {
         background: linear-gradient(180deg, #ffc496 0%, #ffc496 100%);
     }
-    /* Testo generico nella sidebar */
+    /* Testo generico nella sidebar — sfondo chiaro → testo scuro */
     section[data-testid="stSidebar"] p,
     section[data-testid="stSidebar"] span,
     section[data-testid="stSidebar"] small,
     section[data-testid="stSidebar"] label,
     section[data-testid="stSidebar"] .stMarkdown p,
     section[data-testid="stSidebar"] .stMarkdown li,
-    section[data-testid="stSidebar"] label {
-        color: #000000 !important;
+    section[data-testid="stSidebar"] .stMarkdown span,
+    section[data-testid="stSidebar"] .stCaption p,
+    section[data-testid="stSidebar"] [data-testid="stCaptionContainer"] p,
+    section[data-testid="stSidebar"] .stRadio p,
+    section[data-testid="stSidebar"] .stCheckbox p,
+    section[data-testid="stSidebar"] .stCheckbox span {
+        color: #2C2C2A !important;
     }
     /* Intestazioni sidebar */
     section[data-testid="stSidebar"] h1,
     section[data-testid="stSidebar"] h2,
-    section[data-testid="stSidebar"] h3 {
-        color: #000000 !important;
+    section[data-testid="stSidebar"] h3,
+    section[data-testid="stSidebar"] h4 {
+        color: #1A1A18 !important;
     }
     /* Expander dentro la sidebar */
     section[data-testid="stSidebar"] details summary p,
     section[data-testid="stSidebar"] details summary span {
-        color: #EAE8FB !important;
+        color: #2C2C2A !important;
     }
     section[data-testid="stSidebar"] details summary svg {
-        fill: #EAE8FB !important;
+        fill: #2C2C2A !important;
     }
     /* Pulsanti dentro la sidebar */
     section[data-testid="stSidebar"] .stButton button {
-        background: rgba(255,255,255,0.12);
-        color: #FFFFFF !important;
-        border: 1px solid rgba(255,255,255,0.25);
+        background: rgba(0,0,0,0.08);
+        color: #1A1A18 !important;
+        border: 1px solid rgba(0,0,0,0.2);
     }
     section[data-testid="stSidebar"] .stButton button:hover {
-        background: rgba(255,255,255,0.22);
+        background: rgba(0,0,0,0.15);
     }
     /* Divider */
     section[data-testid="stSidebar"] hr {
-        border-color: rgba(255,255,255,0.2) !important;
+        border-color: rgba(0,0,0,0.15) !important;
     }
     /* ── Radio button nella sidebar ──────────────────────────────── */
-    /* Cerchio non selezionato */
+    /* Cerchio non selezionato: bordo scuro su sfondo chiaro */
     section[data-testid="stSidebar"] [data-baseweb="radio"] [role="radio"] {
-        border-color: rgba(255,255,255,0.5) !important;
+        border-color: rgba(0,0,0,0.35) !important;
         background-color: transparent !important;
     }
-    /* Cerchio selezionato (bordo) */
+    /* Cerchio selezionato: riempimento viola con anello bianco interno */
     section[data-testid="stSidebar"] [data-baseweb="radio"] [role="radio"][aria-checked="true"] {
-        border-color: #FFFFFF !important;
-        background-color: #FFFFFF !important;
-    }
-    /* Pallino interno selezionato */
-    section[data-testid="stSidebar"] [data-baseweb="radio"] [role="radio"][aria-checked="true"]::before {
-        background-color: #534AB7 !important;
+        border-color: #3B3689 !important;
+        background-color: #3B3689 !important;
+        box-shadow: inset 0 0 0 3px #ffc496 !important;
     }
     /* Hover sul cerchio */
     section[data-testid="stSidebar"] [data-baseweb="radio"] [role="radio"]:hover {
-        border-color: #FFFFFF !important;
-        background-color: rgba(255,255,255,0.15) !important;
+        border-color: #3B3689 !important;
+        background-color: rgba(59,54,137,0.1) !important;
     }
-    /* Label voce selezionata più luminosa */
+    /* Label voce selezionata: viola scuro + grassetto */
     section[data-testid="stSidebar"] [data-baseweb="radio"] [aria-checked="true"] ~ div p {
-        color: #FFFFFF !important;
-        font-weight: 600;
+        color: #3B3689 !important;
+        font-weight: 700;
     }
 
     /* ── Cards ───────────────────────────────────────────────────── */
