@@ -46,17 +46,32 @@ def inject_custom_css():
     section[data-testid="stSidebar"] h3 {
         color: #FFFFFF !important;
     }
-
-    /* ── Sidebar radio: indicatore e label selezionati in blu ────── */
-    /* Indicatore visivo (cerchio): background e bordo blu */
-    section[data-testid="stSidebar"] [data-baseweb="radio"][data-checked="true"] > div:first-child,
-    section[data-testid="stSidebar"] [data-baseweb="radio"][data-checked="true"] > div:first-child > div {
-        background-color: #5B9BF0 !important;
-        border-color: #5B9BF0 !important;
+    
+    /* ── Sidebar: radio button selezionato ──────────────────────── */
+    section[data-testid="stSidebar"] [role="radio"][aria-checked="true"] > div:first-child {
+        background-color: #2563EB !important;
+        border-color: #2563EB !important;
     }
-    /* Solo il div del testo (secondo figlio diretto): colore blu */
-    section[data-testid="stSidebar"] [data-baseweb="radio"][data-checked="true"] > div:last-child {
-        color: #7BB8F5 !important;
+    /* label del radio selezionato */
+    section[data-testid="stSidebar"] [data-testid="stRadio"] label:has(input:checked) > div > p,
+    section[data-testid="stSidebar"] [data-testid="stRadio"] label:has(input:checked) > p {
+        color: #2563EB !important;
+    }
+    
+    /* ── Sidebar: checkbox selezionata ──────────────────────────── */
+    section[data-testid="stSidebar"] [role="checkbox"][aria-checked="true"] > div:first-child {
+        background-color: #2563EB !important;
+        border-color: #2563EB !important;
+    }
+    /* label della checkbox selezionata */
+    section[data-testid="stSidebar"] [data-testid="stCheckbox"] label:has(input:checked) > div > p,
+    section[data-testid="stSidebar"] [data-testid="stCheckbox"] label:has(input:checked) > p {
+        color: #2563EB !important;
+    }
+    
+    /* ── Sidebar: testo button nero ─────────────────────────────── */
+    section[data-testid="stSidebar"] .stButton > button {
+        color: #000000 !important;
     }
 
     /* ── Cards ───────────────────────────────────────────────────── */
